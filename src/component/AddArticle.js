@@ -51,7 +51,7 @@ export default function AddArticle() {
 
           <form onSubmit={(e) => onSubmit(e)}>
             <div className="mb-3">
-              <label htmlFor="Name" className="form-label">
+              {/* <label htmlFor="Name" className="form-label">
                 Choisir la categorie de l'article
               </label>
               <select name="category_id"
@@ -63,6 +63,8 @@ export default function AddArticle() {
                 ))
                 }
               </select>
+              */}
+             
 
               <label htmlFor="Name" className="form-label">
                 Designation de l'article

@@ -112,7 +112,7 @@ export default function PaginationTable({data}) {
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - data.length) : 0;
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -172,7 +172,7 @@ export default function PaginationTable({data}) {
           style={{width:'30%'}}
             type="text"
             className="form-control"
-            placeholder="Chercher une categorie"
+            placeholder="Chercher un Article"
           onChange={(e)=>setsearchField(e.target.value)}
           />
           <button style={{borderRadius:'5px',border:'2px',height:'40px',width:'5%'}}>
@@ -254,7 +254,7 @@ export default function PaginationTable({data}) {
             <TablePagination
               rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
               colSpan={3}
-              count={rows.length}
+              count={data.length}
               rowsPerPage={rowsPerPage}
               page={page}
               SelectProps={{

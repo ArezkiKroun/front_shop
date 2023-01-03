@@ -37,7 +37,7 @@ export default function ViewUser() {
   }, []);
 
   const loadArticle = async () => {
-    const result = await axios.get("http://localhost:8888/articles");
+    const result = await axios.get("http://localhost:8888/articles/notAssigned");
     setArticle(result.data);
   //  console.log(result.data)
   };
@@ -60,6 +60,7 @@ export default function ViewUser() {
     await axios.post(`http://localhost:8888/articles/${catarticle.article_id}/shops`, shop);
     alert("✔️ l'Article a été assignée a la boutique avec succès!");
     navigate(`/shops/${id}`);
+    window.location.reload();
    
   
   };
